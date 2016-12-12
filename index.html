@@ -8,9 +8,48 @@
 </head>
 <body>
 
-<h1>hello</h1>
+<div class="keys">
+	<div data-key="65" class="key">
+		<kbd>A</kbd>
+		<span class="sound">clap</span>
+	</div>
+	<div data-key="83" class="key">
+		<kbd>S</kbd>
+		<span class="sound">bang</span>
+	</div>
+	<div data-key="68" class="key">
+		<kbd>D</kbd>
+		<span class="sound">clang</span>
+	</div>
+	<div data-key="70" class="key">
+		<kbd>F</kbd>
+		<span class="sound">lock</span>
+	</div>
+</div>
+
+<audio data-key="65" src="sounds/Banana_Slap-AngryFlash-2001109808.wav"></audio>
+<audio data-key="83" src="sounds/Metal%20Bang-SoundBible.com-672025076.wav"></audio>
+<audio data-key="68" src="sounds/Metal%20Clang-SoundBible.com-1363525732.wav"></audio>
+<audio data-key="70" src="sounds/Car%20Door%20Locking-SoundBible.com-1904391654.wav"></audio>
 
 
+
+
+<script>
+	
+window.addEventListener('keydown', function(e) {
+	const audio = document.querySelector(`audio[data-key="${e.keyCode}"`)
+  if(!audio) return; //stops function from running
+  audio.currentTime = 0 //rewinds
+  audio.play();
+  console.log(audio)
+});
+
+
+
+
+
+</script>
 	
 </body>
 </html>
